@@ -13,11 +13,11 @@ render(
             <div>
             <Nav/>
             <switch>
-                <Route exact path='/app' component={App}></Route>
-                <Route exact path='/' component={Home}></Route>
-                
+                <Route exact path='/app' component={App}/>
+                <Route exact path='/' component={Home}/>
             </switch>
             </div>
         </Router>
-    </Provider>,document.getElementById("app")
+    </Provider>,
+    document.getElementById("app")
 );

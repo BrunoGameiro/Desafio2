@@ -26,7 +26,10 @@ class ConnectedList extends Component {
     }
 
     componentDidMount() {
-        this.props.fetchArticles({type: 'FETCH_ARTICLES'});
+        if (this.props.articles.length==0){
+            this.props.fetchArticles({type: 'FETCH_ARTICLES'});
+        }
+
     }
 
     render() {
