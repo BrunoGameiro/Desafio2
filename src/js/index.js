@@ -15,6 +15,7 @@ render(
             <switch>
                 <Route exact path='/app' component={App}></Route>
                 <Route exact path='/' component={Home}></Route>
+                
             </switch>
             </div>
         </Router>
