@@ -1,1 +1,1 @@
-export const ENDPOINT = 'http://localhost:3000/data.json';
+export const ENDPOINT = 'http://localhost/api/news';

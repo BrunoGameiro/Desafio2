@@ -6,6 +6,8 @@ import App from "./components/App";
 import{BrowserRouter as Router, Route} from 'react-router-dom';
 import Home from "./components/Home";
 import Nav from "./components/Navbar";
+import Detail from "./components/Details";
+
 
 render(
     <Provider store={store}>
@@ -13,8 +15,10 @@ render(
             <div>
             <Nav/>
             <switch>
+                <div className={'container'}>
                 <Route exact path='/app' component={App}/>
-                <Route exact path='/' component={Home}/>
+                    <Route exact path='/' component={Home}/></div>
+                <Route exact path='/detail/:id' component={Detail}/>
             </switch>
             </div>
         </Router>

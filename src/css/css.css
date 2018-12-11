@@ -1,0 +1,14 @@
+
+li a{
+    color: white;
+    text-decoration: none;
+}
+li a:hover{
+    color: coral;
+    text-decoration: none;
+}
+
+li .active{
+    color: coral;
+    text-decoration: none;
+}

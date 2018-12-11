@@ -2,6 +2,8 @@ import React, {Component} from "react";
 import {connect} from "react-redux";
 import {deleteArticle} from "../actions/index";
 import {fetchArticles} from "../actions/index";
+import Link from "react-router-dom/es/Link";
+
 
 const mapDispatchToProps = dispatch => {
     return {
@@ -26,7 +28,7 @@ class ConnectedList extends Component {
     }
 
     componentDidMount() {
-        if (this.props.articles.length==0){
+        if (this.props.articles.length == 0) {
             this.props.fetchArticles({type: 'FETCH_ARTICLES'});
         }
 
@@ -35,15 +37,25 @@ class ConnectedList extends Component {
     render() {
         const articles = this.props.articles;
         return (
-            <ul className="list-group list-group-flush">
+
+            <div className='row'>
                 {articles.map((el, index) => (
-                    <li className="list-group-item" key={index} onClick={() => this.clickAction(el)}>
-                        {el.title}
-                        <button className="btn btn-danger btn-lg">DELETE</button>
-                    </li>
+                    <div className="col-lg-6 portfolio-item">
+                        <Link  className='adName' to = {{pathname: `detail/${el.id}`, query: { id: el.id}} }>
+                        <div className="card h-100">
+                            <a href="#"><img className="card-img-top" src={el.img_url} alt=""/></a>
+                            <div className="card-body">
+                                <h4 className="card-title">
+                                    <a href="#">{el.title}</a>
+                                </h4>
+                                <p className="card-text">{el.resume}</p>
+                            </div>
+                        </div>
+                        </Link>
+                    </div>
                 ))
                 }
-            </ul>
+            </div>
         );
     }
 }
