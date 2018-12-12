@@ -8,7 +8,7 @@ class Detail extends Component {
     };
 
     componentDidMount() {
-        axios.get('http://localhost/api/news/'+this.props.match.params.id)
+        axios.get('http://localhost/api/news/' + this.props.match.params.id)
             .then(response => {
                 this.setState({noticia: response.data.data})
             })
@@ -18,15 +18,22 @@ class Detail extends Component {
     }
 
     render() {
-        if(this.state.noticia.length === 0){
+        if (this.state.noticia.length === 0) {
             return null;
         }
         else {
             return (
+
                 <div>
-                    <img src={this.state.noticia.img_url}/>
-                    <h1> {this.state.noticia.title}</h1>
-                    <p>{this.state.noticia.news}</p>
+
+                    <div className="col-md-8">
+                        <img className="img-fluid" src={this.state.noticia.img_url} alt=""/>
+                    </div>
+
+                    <div className="col-md-4">
+                        <h3 className="my-3">{this.state.noticia.title}</h3>
+                        <p>{this.state.noticia.news}</p>
+                    </div>
                 </div>
             );
         }

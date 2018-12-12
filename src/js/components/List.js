@@ -38,23 +38,25 @@ class ConnectedList extends Component {
         const articles = this.props.articles;
         return (
 
-            <div className='row'>
-                {articles.map((el, index) => (
-                    <div className="col-lg-6 portfolio-item">
-                        <Link  className='adName' to = {{pathname: `detail/${el.id}`, query: { id: el.id}} }>
-                        <div className="card h-100">
-                            <a href="#"><img className="card-img-top" src={el.img_url} alt=""/></a>
-                            <div className="card-body">
-                                <h4 className="card-title">
-                                    <a href="#">{el.title}</a>
-                                </h4>
-                                <p className="card-text">{el.resume}</p>
-                            </div>
+            <div className={"container"}>
+                <div className='row'>
+                    {articles.map((el, index) => (
+                        <div className="col-lg-6 portfolio-item">
+                            <Link className='adName' to={{pathname: `detail/${el.id}`, query: {id: el.id}}}>
+                                <div className="card h-100">
+                                    <a href="#"><img className="card-img-top" src={el.img_url} alt=""/></a>
+                                    <div className="card-body">
+                                        <h4 className="card-title">
+                                            <a href="#">{el.title}</a>
+                                        </h4>
+                                        <p className="card-text">{el.resume}</p>
+                                    </div>
+                                </div>
+                            </Link>
                         </div>
-                        </Link>
-                    </div>
-                ))
-                }
+                    ))
+                    }
+                </div>
             </div>
         );
     }

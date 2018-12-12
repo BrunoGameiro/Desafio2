@@ -4,11 +4,10 @@ import Form from "./Form";
 
 
 const App = () => (
-
     <div>
         <List/>
+        <Form/>
     </div>
-
 );
 
 export default App;

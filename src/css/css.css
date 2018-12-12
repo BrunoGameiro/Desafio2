@@ -1,14 +1,15 @@
 
-li a{
+li a {
     color: white;
     text-decoration: none;
 }
-li a:hover{
+
+li a:hover {
     color: coral;
     text-decoration: none;
 }
 
-li .active{
+li .active {
     color: coral;
     text-decoration: none;
 }
